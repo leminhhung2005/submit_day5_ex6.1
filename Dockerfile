@@ -3,7 +3,7 @@ FROM tomcat:11.0.10
 RUN rm -rf /usr/local/tomcat/webapps/*
 
 COPY *.war /usr/local/tomcat/webapps
-FROM tomcat:11-jdk24
+FROM tomcat:10-jdk17
 WORKDIR /usr/local/tomcat/webapps
 COPY --from=build /app/target/*.war .
 EXPOSE 8080
